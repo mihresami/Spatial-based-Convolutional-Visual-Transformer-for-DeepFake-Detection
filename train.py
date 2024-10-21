@@ -13,7 +13,7 @@ import argparse
 import torch,gc
 import torch.nn.functional as F
 # from Cvit import CViT
-from ST_net import ST_NET
+#from ST_net import ST_NET
 from transformers import AutoImageProcessor
 from torchvision.transforms import RandomResizedCrop, Compose, Normalize, ToTensor
 # from torch.utils.tensorboard import EarlyStopping
@@ -292,17 +292,9 @@ if __name__ == '__main__':
     # dataiter = iter(train_loader)
     # img,label = next(dataiter)
     # print(img.shape)
-    # model = vitTNet(seq_length=196,hidden_dim=768,layers_dim=[512,49])
-    # model = vitNet(256,1280)
-    # model = M_vit()
-    model = maxvit_t()
-    # model = ST_NET()
-    # model = CViT()
-    # model = VitNet()
-    # model  = Swim_Net()
-    # model = RF_Net(seq_length=196,hidden_dim=768)
-    # model = WindowAttention_Net()
-    # model = RvitattenNet(seq_length=196,hidden_dim=768,layers_dim=[784,49])
+    
+  
+    model = RvitattenNet(seq_length=196,hidden_dim=768,layers_dim=[784,49])
     # model.load_state_dict(torch.load('weight_grad/RvitFFnewattention2-107-acc0.9793039181692095.pt'), strict=False)
     # model.load_state_dict(torch.load('STNET_weight/ST_NET_FF++-21-acc0.8810916179337231.pt'), strict=False)
     # model.load_state_dict(torch.load("weight_deepmodel_freq/DeepModel_freq(local(allmvit)_and_global(allRsNet)_and_Catlast_layersboth)_alldata-26-acc0.9943025920785048.pt"),strict=False)
